@@ -26,7 +26,39 @@ const Content = styled.div`
   flex: 1;
 `
 
-const Layout = ({ children, location }) => (
+const Layout = ({
+  children,
+  location,
+  data: {
+    site: {
+      siteMetadata: { title, shortName },
+    },
+  },
+}) => (
+  <>
+    <Global styles={globalStyles} />
+    <Helmet
+      title={title}
+      meta={[
+        { name: 'description', content: 'Sample' },
+        { name: 'keywords', content: 'sample, something' },
+      ]}
+    >
+      <html lang="en" />
+    </Helmet>
+    <Container>
+      <Header siteTitle={shortName} />
+      <ContentViewport>
+        <Content>
+          <PageTransition location={location}>{children}</PageTransition>
+        </Content>
+        <Footer />
+      </ContentViewport>
+    </Container>
+  </>
+)
+
+export default props => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -38,34 +70,21 @@ const Layout = ({ children, location }) => (
         }
       }
     `}
-    render={data => (
-      <>
-        <Global styles={globalStyles} />
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
-        <Container>
-          <Header siteTitle={data.site.siteMetadata.shortName} />
-          <ContentViewport>
-            <Content>
-              <PageTransition location={location}>{children}</PageTransition>
-            </Content>
-            <Footer />
-          </ContentViewport>
-        </Container>
-      </>
-    )}
+    render={data => <Layout data={data} {...props} />}
   />
 )
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  data: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        shortName: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+  children: PropTypes.element.isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
 }
-
-export default Layout
