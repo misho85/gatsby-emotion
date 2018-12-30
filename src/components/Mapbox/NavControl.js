@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavigationControl } from 'react-map-gl'
-import { Global, css } from '@emotion/core'
+import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 import screenFull from '../../assets/images/screen-full.svg'
 import screenNormal from '../../assets/images/screen-normal.svg'
@@ -50,6 +50,9 @@ const FScreenBtn = styled.button`
   &:hover {
     background: ${props => props.theme.colors.greyLighter};
   }
+  img {
+    margin-bottom: -3px;
+  }
 `
 export default ({
   styleChange,
@@ -59,16 +62,6 @@ export default ({
   styleId,
 }) => (
   <>
-    <Global
-      styles={{
-        '.mapboxgl-ctrl-group': {
-          borderRadius: 0,
-        },
-        '.mapboxgl-ctrl-group:not(:empty)': {
-          boxShadow: '0 0 0 1px rgba(0, 0, 0, 0.1)',
-        },
-      }}
-    />
     <Position topLeft>
       <NavigationControl
         showCompass={false}
@@ -82,11 +75,7 @@ export default ({
     </Position>
     <Position topRight>
       <FScreenBtn type="button" onClick={goFull}>
-        <img
-          src={fullScreen ? screenNormal : screenFull}
-          style={{ marginBottom: '-5px' }}
-          alt="fullScreen"
-        />
+        <img src={fullScreen ? screenNormal : screenFull} alt="fullScreen" />
       </FScreenBtn>
     </Position>
   </>
