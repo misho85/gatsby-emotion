@@ -1,0 +1,21 @@
+- title: Gatsby-starter-Netlify-CMS
+  link: https://github.com/misho85/gatsby-starter-netlify-cms
+  description: his repo contains an example business website that is built with Gatsby, and Netlify CMS
+  techs:
+    - React
+    - GatsbyJS
+    - Bulma
+    - Netlify CMS
+- title: Project Guidelines
+  link: https://github.com/misho85/project-guidelines
+  description: list of guidelines we've found, written and gathered that (we think) works really well with most JavaScript projects
+  techs:
+    - Project
+    - JavaScript
+- title: kalkulator-plate
+  link: https://github.com/misho85/kalkulator-plate
+  description: App for web presentation of custom excel doc with calculation
+  techs:
+    - React
+    - CRA
+    - xlsx
