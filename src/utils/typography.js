@@ -64,7 +64,7 @@ const typography = new Typography({
     h5: scale(-1 / 6),
     h6: scale(-2 / 6),
     blockquote: {
-      ...scale(1 / 6),
+      // ...scale(1 / 6),
       borderLeft: `${rhythm(1 / 6)} solid ${gray(87)}`,
       paddingTop: rhythm(1 / 3),
       paddingBottom: rhythm(1 / 3),
