@@ -14,13 +14,6 @@ const FeaturedImg = styled.img`
 `
 const Content = styled.div`
   max-width: 45rem;
-  p {
-    line-height: 2;
-    color: ${props => props.theme.colors.greyDarkest};
-  }
-  a {
-    color: ${props => props.theme.colors.black};
-  }
 `
 
 const BlogPostTemplate = ({ data, pageContext }) => {

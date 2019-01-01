@@ -1,11 +1,19 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 import Link from './Link'
 import { Meta } from './Text'
 
+const linkStyle = css`
+  &:hover {
+    text-decoration: none;
+    color: hsla(0, 0%, 0%, 0.8);
+  }
+`
+
 const Name = styled.div`
   font-weight: 700;
-  color: ${props => props.theme.colors.grayDarkest};
+  /* color: ${props => props.theme.colors.grayDarkest}; */
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   font-size: 1.5rem;
@@ -20,7 +28,7 @@ const Container = styled.div`
       transition: all 250ms ease-in-out;
       opacity: 0;
       font-weight: 200;
-      color: ${props => props.theme.colors.gray};
+      /* color: ${props => props.theme.colors.gray}; */
       padding-left: 1.5rem;
     }
   }
@@ -35,7 +43,7 @@ const Container = styled.div`
 `
 
 const List = ({ to, name, meta }) => (
-  <Link to={to}>
+  <Link css={linkStyle} to={to}>
     <Container>
       <Name>{name}</Name>
       <Meta>{meta}</Meta>
