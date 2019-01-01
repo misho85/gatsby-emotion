@@ -36,7 +36,7 @@ const Layout = ({
   },
 }) => (
   <>
-    <Global styles={[prism.original, globalStyles]} />
+    <Global styles={[prism.solarized, globalStyles]} />
     <Helmet
       title={title}
       meta={[
