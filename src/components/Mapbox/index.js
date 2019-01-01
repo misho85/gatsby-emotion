@@ -1,10 +1,19 @@
 import React, { Component } from 'react'
 import ReactMapGL, { Marker } from 'react-map-gl'
-import { Global } from '@emotion/core'
+import { Global, css } from '@emotion/core'
 import mapbox from 'mapbox-gl/dist/mapbox-gl.css'
 import Pin from './Pin'
 import NavControl from './NavControl'
 import { mapLatitude, mapLongitude } from '../../../config/website'
+
+const zoomBtn = css`
+  &.mapboxgl-ctrl-group {
+    border-radius: 0;
+  }
+  &.mapboxgl-ctrl-group:not(:empty) {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  }
+`
 
 const MAPBOX_TOKEN =
   'pk.eyJ1IjoibHVjYXN3b2oiLCJhIjoiY2l5Nmg4cWU1MDA0ejMzcDJtNHJmZzJkcyJ9.WhcEdTYQH6sSw2pm0RSP9Q'
@@ -33,19 +42,7 @@ export default class Mapbox extends Component {
     const { fullScreen, goFull } = this.props
     return (
       <>
-        <Global
-          styles={[
-            mapbox,
-            {
-              '.mapboxgl-ctrl-group': {
-                borderRadius: 0,
-              },
-              '.mapboxgl-ctrl-group:not(:empty)': {
-                boxShadow: '0 0 0 1px rgba(0, 0, 0, 0.1)',
-              },
-            },
-          ]}
-        />
+        <Global styles={[mapbox, zoomBtn]} />
         <ReactMapGL
           {...viewport}
           mapboxApiAccessToken={MAPBOX_TOKEN}
