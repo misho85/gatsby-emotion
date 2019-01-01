@@ -8,7 +8,7 @@ import PageTransition from './PageTransition'
 import Header from './Header'
 import Footer from './Footer'
 import globalStyles from '../styles/global'
-import 'normalize.css'
+import prism from '../styles/prism/index'
 
 const Container = styled.div`
   height: 100vh;
@@ -36,7 +36,7 @@ const Layout = ({
   },
 }) => (
   <>
-    <Global styles={globalStyles} />
+    <Global styles={[prism.original, globalStyles]} />
     <Helmet
       title={title}
       meta={[
