@@ -1,7 +1,8 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react'
-import { slide as Menu } from 'react-burger-menu'
+import { slide } from 'react-burger-menu'
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 
 import MobileMenuOpenIcon from '../../assets/mobile-menu-open.svg'
 import MobileMenuCloseIcon from '../../assets/mobile-menu-close.svg'
@@ -28,6 +29,13 @@ const NavItemWrapper = styled.div`
   padding-bottom: 20px;
   border-bottom: solid 1px #d2d2d2;
   text-align: center;
+`
+
+const mShadow = css`
+  box-shadow: -10px 10px 30px -5px rgba(0, 0, 0, 0.25);
+`
+const Menu = styled(slide)`
+  ${props => props.shadow && mShadow};
 `
 
 const menuStyle = {
@@ -79,6 +87,7 @@ class MobileMenu extends Component {
           image={isOpen ? MobileMenuCloseIcon : MobileMenuOpenIcon}
         />
         <Menu
+          shadow={isOpen}
           pageWrapId="page-wrap"
           outerContainerId="outer-container"
           isOpen={isOpen}
