@@ -31,7 +31,7 @@ const typography = new Typography({
   baseFontSize: '18px',
   baseLineHeight: 1.66,
   scaleRatio: 2.5,
-  headerFontFamily: ['Open Sans', ...defaultFonts],
+  headerFontFamily: ['Lato', ...defaultFonts],
   bodyFontFamily: ['Lato', ...defaultFonts],
   headerColor: gray(15),
   bodyColor: gray(20),
