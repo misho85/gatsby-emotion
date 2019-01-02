@@ -1,6 +1,6 @@
 ---
 title: A Full and Comprehensive Style Test
-date: 2018-12-30
+date: "2018-12-30"
 featured_image: ../images/testimg-cover.jpg
 ---
 

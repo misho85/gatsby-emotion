@@ -16,6 +16,7 @@ const backgroundDark = props => css`
 `
 
 const Ribbon = styled.div`
+  opacity: 1;
   padding-left: 1rem;
   padding-right: 1rem;
   @media screen and (min-width: 768px) {
@@ -35,7 +36,7 @@ const Container = styled.div`
   justify-content: space-between;
 `
 const Footer = () => (
-  <Ribbon>
+  <Ribbon id="footer">
     <Container>
       <Half left>
         <Link to="/">
