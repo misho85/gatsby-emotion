@@ -15,8 +15,9 @@ const Wrapper = styled.header`
   justify-content: center;
   width: 100%;
   height: 60px;
-  border-bottom: 1px solid #d2d2d2;
   background-color: #fff;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px -1px rgba(0, 0, 0, 0.3);
 `
 
 const Container = styled.div`
