@@ -51,7 +51,7 @@ const FScreenBtn = styled.button`
     background: ${props => props.theme.colors.greyLighter};
   }
   img {
-    margin-bottom: -3px;
+    margin-bottom: -7px;
   }
 `
 export default ({
