@@ -1,19 +1,14 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
-
+import StickyHide from './StickyHide'
 import logo from '../../assets/images/logo.svg'
 import { rhythm } from '../../utils/typography'
 import Nav from './Nav'
 
 const Wrapper = styled.header`
   display: flex;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
   justify-content: center;
-  width: 100%;
   height: 60px;
   background-color: #fff;
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
@@ -34,19 +29,17 @@ const Logo = styled.img`
   margin: 0;
 `
 
-const LogoLink = styled(Link)`
-  width: 229px;
-`
-
 const Header = ({ title, pathname }) => (
-  <Wrapper role="banner">
-    <Container>
-      <LogoLink to="/">
-        <Logo src={logo} alt={title} />
-      </LogoLink>
-      <Nav pathname={pathname} />
-    </Container>
-  </Wrapper>
+  <StickyHide tolerance={60}>
+    <Wrapper role="banner">
+      <Container>
+        <Link to="/">
+          <Logo src={logo} alt={title} />
+        </Link>
+        <Nav pathname={pathname} />
+      </Container>
+    </Wrapper>
+  </StickyHide>
 )
 
 export default Header
