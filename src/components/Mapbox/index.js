@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import ReactMapGL, { Marker } from 'react-map-gl'
-import { Global } from '@emotion/core'
-import mapbox from 'mapbox-gl/dist/mapbox-gl.css'
 import Pin from './Pin'
 import NavControl from './NavControl'
 import { mapLatitude, mapLongitude } from '../../../config/website'
@@ -33,7 +31,6 @@ export default class Mapbox extends Component {
     const { fullScreen, goFull } = this.props
     return (
       <>
-        <Global styles={mapbox} />
         <ReactMapGL
           {...viewport}
           mapboxApiAccessToken={MAPBOX_TOKEN}

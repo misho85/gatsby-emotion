@@ -1,18 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { NavigationControl } from 'react-map-gl'
-import { Global, css } from '@emotion/core'
+import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 import screenFull from '../../assets/images/screen-full.svg'
 import screenNormal from '../../assets/images/screen-normal.svg'
 
-const zoomBtn = css`
-  &.mapboxgl-ctrl-group {
-    border-radius: 0;
-  }
-  &.mapboxgl-ctrl-group:not(:empty) {
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
-  }
-`
 const topLeft = css`
   padding: 0.5rem 0 0 0.5rem;
 `
@@ -60,47 +52,29 @@ const FScreenBtn = styled.button`
     margin-bottom: -7px;
   }
 `
-class NavControl extends Component {
-  state = { mounted: false }
-
-  componentWillMount() {
-    this.setState({ mounted: true })
-  }
-
-  render() {
-    const {
-      styleChange,
-      onViewportChange,
-      goFull,
-      fullScreen,
-      styleId,
-    } = this.props
-    const { mounted } = this.state
-    return (
-      <>
-        <Global styles={mounted && zoomBtn} />
-        <Position topLeft>
-          <NavigationControl
-            showCompass={false}
-            onViewportChange={onViewportChange}
-          />
-        </Position>
-        <Position bottomLeft>
-          <ThemeBtn onClick={styleChange}>
-            {styleId === 'light' ? 'dark' : 'light'} theme
-          </ThemeBtn>
-        </Position>
-        <Position topRight>
-          <FScreenBtn type="button" onClick={goFull}>
-            <img
-              src={fullScreen ? screenNormal : screenFull}
-              alt="fullScreen"
-            />
-          </FScreenBtn>
-        </Position>
-      </>
-    )
-  }
-}
-
-export default NavControl
+export default ({
+  styleChange,
+  onViewportChange,
+  goFull,
+  fullScreen,
+  styleId,
+}) => (
+  <>
+    <Position topLeft>
+      <NavigationControl
+        showCompass={false}
+        onViewportChange={onViewportChange}
+      />
+    </Position>
+    <Position bottomLeft>
+      <ThemeBtn onClick={styleChange}>
+        {styleId === 'light' ? 'dark' : 'light'} theme
+      </ThemeBtn>
+    </Position>
+    <Position topRight>
+      <FScreenBtn type="button" onClick={goFull}>
+        <img src={fullScreen ? screenNormal : screenFull} alt="fullScreen" />
+      </FScreenBtn>
+    </Position>
+  </>
+)
