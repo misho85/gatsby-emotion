@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { slide } from 'react-burger-menu'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-
+import { rhythm } from '../../utils/typography'
 import MobileMenuOpenIcon from '../../assets/mobile-menu-open.svg'
 import MobileMenuCloseIcon from '../../assets/mobile-menu-close.svg'
 
@@ -50,7 +50,7 @@ const menuStyle = {
     background: 'white',
   },
   bmMenuWrap: {
-    top: 60,
+    top: rhythm(2),
     bottom: 0,
     width: '100%',
     height: 'auto',

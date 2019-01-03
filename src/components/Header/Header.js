@@ -30,7 +30,7 @@ const Logo = styled.img`
 `
 
 const Header = ({ title, pathname }) => (
-  <StickyHide tolerance={rhythm(2)}>
+  <StickyHide tolerance={rhythm(2) * 1}>
     <Wrapper role="banner">
       <Container>
         <Link to="/">
