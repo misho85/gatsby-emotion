@@ -97,22 +97,37 @@ class MobileMenu extends Component {
         >
           <NavItemWrapper>
             <NavItem
-              title="Blog"
+              title="HOME"
+              to="/"
+              onClick={this.toggleMenu}
+              hasHover={false}
+              pathname={pathname}
+            />
+            <NavItem
+              title="BLOG"
               to="/blog"
               onClick={this.toggleMenu}
               hasHover={false}
               pathname={pathname}
             />
             <NavItem
-              title="Repos"
+              title="REPOS"
               to="/repos"
               onClick={this.toggleMenu}
               hasHover={false}
               pathname={pathname}
             />
             <NavItem
-              title="GitHub"
-              to="https://github.com/misho85/gatsby-emotion"
+              title="READING"
+              to="/reading"
+              onClick={this.toggleMenu}
+              hasHover={false}
+              pathname={pathname}
+            />
+            <NavItem
+              title="CONTACT"
+              to="/contact"
+              onClick={this.toggleMenu}
               hasHover={false}
               pathname={pathname}
             />

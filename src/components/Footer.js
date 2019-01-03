@@ -39,28 +39,12 @@ const Footer = () => (
   <Ribbon id="footer">
     <Container>
       <Half left>
-        <Link to="/">
-          <LinkItem>HOME</LinkItem>
-        </Link>
-        <Space />
-        <Link to="/blog">
-          <LinkItem>BLOG</LinkItem>
-        </Link>
-        <Space />
-        <Link to="/repos">
-          <LinkItem>REPOS</LinkItem>
-        </Link>
-        <Space />
-        <Link to="/reading">
-          <LinkItem>READING</LinkItem>
+        <Link to="https://github.com/misho85">
+          <LinkItem>GITHUB</LinkItem>
         </Link>
         <Space />
         <Link to="/tester">
           <LinkItem>TEST</LinkItem>
-        </Link>
-        <Space />
-        <Link to="https://github.com/misho85">
-          <LinkItem>GITHUB</LinkItem>
         </Link>
         <Space />
       </Half>
