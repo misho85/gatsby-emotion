@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import styled from '@emotion/styled'
 import { StaticQuery, graphql } from 'gatsby'
 import { Global } from '@emotion/core'
+import { rhythm } from '../utils/typography'
 import globalStyles from '../styles/global'
 import prism from '../styles/prism/index'
 import Header from './Header/Header'
@@ -14,10 +15,7 @@ const Container = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  margin-top: 4rem;
-  @media (${props => props.theme.maxWidth.tablet}) {
-    margin-top: 2rem;
-  }
+  margin-top: ${rhythm(1)};
 `
 
 const ContentViewport = styled.div`
