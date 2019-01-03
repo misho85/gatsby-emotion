@@ -135,6 +135,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-nprogress',
+      options: {
+        color: config.themeColor,
+        showSpinner: false,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: config.title,
