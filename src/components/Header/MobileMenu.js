@@ -68,6 +68,25 @@ class MobileMenu extends Component {
     isOpen: false,
   }
 
+  componentDidUpdate(prevState) {
+    // If the hamburger menu is open, disable scrolling on the site
+    if (prevState.isOpen !== this.state.isOpen) {
+      if (this.state.isOpen) {
+        // overflow:hidden disables the scrolling on a desktop browser
+        // position: fixed is additionally needed for mobile devices
+        document.body.setAttribute(
+          'style',
+          'overflow: hidden; position: fixed;'
+        )
+      } else {
+        document.body.setAttribute(
+          'style',
+          'overflow: visible; position: static;'
+        )
+      }
+    }
+  }
+
   toggleMenu = () => {
     // document.getElementById('content').style.opacity = this.state.isOpen ? 1 : 0
     // document.getElementById('footer').style.opacity = this.state.isOpen ? 1 : 0
