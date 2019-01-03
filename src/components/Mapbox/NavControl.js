@@ -1,10 +1,18 @@
 import React from 'react'
 import { NavigationControl } from 'react-map-gl'
-import { css } from '@emotion/core'
+import { Global, css } from '@emotion/core'
 import styled from '@emotion/styled'
 import screenFull from '../../assets/images/screen-full.svg'
 import screenNormal from '../../assets/images/screen-normal.svg'
 
+const zoomBtn = css`
+  &.mapboxgl-ctrl-group {
+    border-radius: 0;
+  }
+  &.mapboxgl-ctrl-group:not(:empty) {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  }
+`
 const topLeft = css`
   padding: 0.5rem 0 0 0.5rem;
 `
@@ -17,7 +25,6 @@ const topRight = css`
   top: 0;
   right: 0;
 `
-
 const Position = styled.div`
   position: absolute;
   ${props =>
@@ -25,7 +32,6 @@ const Position = styled.div`
     (props.bottomLeft && bottomLeft) ||
     (props.topRight && topRight)};
 `
-
 const ThemeBtn = styled.button`
   background: white;
   outline: 0;
@@ -62,6 +68,7 @@ export default ({
   styleId,
 }) => (
   <>
+    <Global styles={zoomBtn} />
     <Position topLeft>
       <NavigationControl
         showCompass={false}
