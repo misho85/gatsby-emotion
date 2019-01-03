@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { NavigationControl } from 'react-map-gl'
 import { Global, css } from '@emotion/core'
 import styled from '@emotion/styled'
@@ -60,30 +60,47 @@ const FScreenBtn = styled.button`
     margin-bottom: -7px;
   }
 `
-export default ({
-  styleChange,
-  onViewportChange,
-  goFull,
-  fullScreen,
-  styleId,
-}) => (
-  <>
-    <Global styles={zoomBtn} />
-    <Position topLeft>
-      <NavigationControl
-        showCompass={false}
-        onViewportChange={onViewportChange}
-      />
-    </Position>
-    <Position bottomLeft>
-      <ThemeBtn onClick={styleChange}>
-        {styleId === 'light' ? 'dark' : 'light'} theme
-      </ThemeBtn>
-    </Position>
-    <Position topRight>
-      <FScreenBtn type="button" onClick={goFull}>
-        <img src={fullScreen ? screenNormal : screenFull} alt="fullScreen" />
-      </FScreenBtn>
-    </Position>
-  </>
-)
+class NavControl extends Component {
+  state = { mounted: false }
+
+  componentWillMount() {
+    this.setState({ mounted: true })
+  }
+
+  render() {
+    const {
+      styleChange,
+      onViewportChange,
+      goFull,
+      fullScreen,
+      styleId,
+    } = this.props
+    const { mounted } = this.state
+    return (
+      <>
+        <Global styles={mounted && zoomBtn} />
+        <Position topLeft>
+          <NavigationControl
+            showCompass={false}
+            onViewportChange={onViewportChange}
+          />
+        </Position>
+        <Position bottomLeft>
+          <ThemeBtn onClick={styleChange}>
+            {styleId === 'light' ? 'dark' : 'light'} theme
+          </ThemeBtn>
+        </Position>
+        <Position topRight>
+          <FScreenBtn type="button" onClick={goFull}>
+            <img
+              src={fullScreen ? screenNormal : screenFull}
+              alt="fullScreen"
+            />
+          </FScreenBtn>
+        </Position>
+      </>
+    )
+  }
+}
+
+export default NavControl
