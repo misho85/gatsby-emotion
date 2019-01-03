@@ -4,6 +4,9 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
+// custom typefaces
+import 'typeface-lato'
+
 import React from 'react'
 import { ThemeProvider } from 'emotion-theming'
 
