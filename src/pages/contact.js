@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from '@emotion/styled'
 import { Global } from '@emotion/core'
 import Fullscreen from 'react-full-screen'
+import { rhythm } from '../utils/typography'
 import Section from '../components/Section'
 import { Tagline } from '../components/Text'
 import Mapbox from '../components/Mapbox'
@@ -9,6 +10,7 @@ import ContactForm from '../components/ContactForm'
 
 const Container = styled.div`
   height: 40vh;
+  margin-top: ${rhythm(1)};
 `
 
 export default class Contact extends Component {

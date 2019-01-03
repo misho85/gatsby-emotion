@@ -9,7 +9,7 @@ import Nav from './Nav'
 const Wrapper = styled.header`
   display: flex;
   justify-content: center;
-  height: 60px;
+  height: ${rhythm(2)};
   background-color: #fff;
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
     0 2px 4px -1px rgba(0, 0, 0, 0.3);
@@ -30,7 +30,7 @@ const Logo = styled.img`
 `
 
 const Header = ({ title, pathname }) => (
-  <StickyHide tolerance={60}>
+  <StickyHide tolerance={rhythm(2)}>
     <Wrapper role="banner">
       <Container>
         <Link to="/">
