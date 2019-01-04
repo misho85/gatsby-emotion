@@ -79,6 +79,8 @@ export default class SmartSticky extends Component {
     const { stickyPosition } = this.state
     const { currentMove, lastScrollChange } = this.scrollInfo
     const targetDivHeight = this.containerDiv.clientHeight
+
+    //  ? tolerance ne funkcionishe a i kad se ubaci blokira header i na scroll up!?
     const { tolerance } = this.props
 
     // if move in one direction is smaller then tolerance
@@ -91,6 +93,7 @@ export default class SmartSticky extends Component {
     // add change of scroll position to sticky position
     let newStickyPosition = stickyPosition + lastScrollChange
 
+    //  ?  newStickyPosition vrednost se ne resetuje, uslovi nemaju efekta!?
     // if change is bigger than sticky height - cap it (it cannot be 'more' hidden)
     if (newStickyPosition > targetDivHeight) newStickyPosition = targetDivHeight
     // if sticky is fully visible - don't let it go down the screen
