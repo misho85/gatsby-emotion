@@ -5,7 +5,7 @@
   "author": "M150",
   "dependencies": {
     "@emotion/core": "^10.0.5",
-    "@emotion/styled": "^10.0.5",
+    "@emotion/styled": "^10.0.12",
     "compass-vertical-rhythm": "^1.4.5",
     "emotion": "^10.0.5",
     "emotion-server": "^10.0.5",
