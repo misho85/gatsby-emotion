@@ -43,7 +43,7 @@
     "react-helmet": "^5.2.0",
     "react-map-gl": "^4.0.6",
     "react-transition-group": "^2.5.2",
-    "react-typography": "^0.16.18",
+    "react-typography": "^0.16.19",
     "typeface-lato": "^0.0.54",
     "typography": "^0.16.18",
     "typography-breakpoint-constants": "^0.16.18"
